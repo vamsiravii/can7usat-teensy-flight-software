@@ -1,0 +1,39 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Python
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+pytest_output.txt
+
+# Node / JS
+node_modules/
+
+# Compiled C/C++ SIL test binaries
+sil_test/*_runner
+sil_test/test_ekf
+sil_test/test_spool_actuators
+sil_test/sim_runner
+sil_test/unit_runner
+
+# Build artifacts and objects
+*.o
+*.elf
+out/
+
+# Unrelated project
+ripple-guard/
+
+# Scratch & temporary logs
+scratch/
+debug_output*.txt

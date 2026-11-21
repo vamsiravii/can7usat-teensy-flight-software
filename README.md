@@ -21,10 +21,16 @@ resilient-lovelace/
 ├── groundstation/               # Ground station telemetry logging and parsing utilities
 ├── i2c_scanner/                 # Teensy 4.1 I2C bus scanner (Wire & Wire1)
 ├── lora_flasher_passthrough/    # UART passthrough flasher for Ai-Thinker Ra-08 LoRa module
-├── CAN-7USAT-Precision-Landing/ # Python 6-DoF flight dynamics, wind modeling & trajectory optimizer
-├── Ai-Thinker-LoRaWAN-Ra-08/    # Ai-Thinker Ra-08 (ASR6601CB) LoRa SDK and drivers
-└── Parikshit - 2026-INSPACe-CAN-7USAT-017_CDR (1).pdf # Critical Design Review (CDR) documentation
+├── CAN-7USAT-Precision-Landing-latest/ # Python 6-DoF flight dynamics, wind modeling & trajectory optimizer
+├── Ai-Thinker-LoRaWAN-Ra-08/    # Ai-Thinker Ra-08 (ASR6601CB) LoRa SDK and drivers (vendored third-party code)
+└── docs/
+    ├── CDR_Team017.pdf          # Critical Design Review (CDR) documentation
+    └── datasheets/              # Component datasheets
 ```
+
+> The Arduino Uno/Mega build of the flight software and the same Python simulation are also published in
+> [CAN7USAT-Precision-Landing-FSW](https://github.com/vamsiravii/CAN7USAT-Precision-Landing-FSW).
+> This repository targets the Teensy 4.1 flight computer.
 
 ---
 
@@ -47,11 +53,10 @@ resilient-lovelace/
 
 ## Verification & SIL Testing
 
-To compile and run the full 98-case unit test suite, 19-stage actuator safety harness, and 100-run Monte Carlo flight dynamics simulation:
+To compile and run the full 98-case unit test suite, 19-stage actuator safety harness, and 100-run Monte Carlo flight dynamics simulation, run the script **from the repository root** (it uses root-relative paths and needs `clang++`):
 
 ```bash
-cd sil_test
-bash test_all.sh
+bash sil_test/test_all.sh
 ```
 
 ---
